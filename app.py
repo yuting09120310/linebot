@@ -26,7 +26,7 @@ static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 # Channel Access Token
 line_bot_api = LineBotApi('sOKarAPrqF49gDHGyLqy7zJK9T3BXjF2W6vX8WDi6HMOMfsfl+MM+d8L3/KnELqJo5mB/Qtzkz+DoZlaWn1xFIq3oI3LNQSlxfURZNu2mVneu2e0T5mpedIU7BWNYOdKzDWDXREqGuZsTHZTCczDnQdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-handler = WebhookHandler('d3c9e43cdfd2093f61a9c44e599cbca6')
+handler = WebhookHandler('')
 
 
 # 監聽所有來自 /callback 的 Post Request
