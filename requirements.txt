@@ -1,0 +1,8 @@
+.git
+__pycache__
+static
+app.py
+Function.py
+message.py
+new.py
+requirements.txt
