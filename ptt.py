@@ -5,6 +5,4 @@ def function_ptt():
     soup = BeautifulSoup(res.text,"html.parser")
     for item in soup.select('.r-ent'):
         message = item.select('.title')[0].text
-    print(message)
-
-function_ptt()
+    return message
