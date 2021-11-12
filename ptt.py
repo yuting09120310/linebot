@@ -23,16 +23,17 @@ def ticketInfo(keyword):
     else:
         for title in main_titles:
             inFo += title.text.strip() + "\n"
-            inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
+            # inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
 
+    print(inFo)
     return inFo
     
 # def test():
-#     str = "ptt 討論"
+#     str = "ptt"
 #     data = str.split(' ')
 #     if(len(data) > 1):
 #         print(len(data))
 #     else:
 #         print("b")
 
-# test()
+ticketInfo("ptt 討論")
