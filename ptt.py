@@ -14,7 +14,9 @@ def ticketInfo():
     main_titles = soup.find_all('div', 'title')
 
     for title in main_titles:
-        inFo += title.text + "\n"
-            
+
+        if "問題" in title.text:
+            inFo += title.text.strip() + "\n"
+            inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
 
     return inFo
