@@ -13,13 +13,15 @@ def ticketInfo(keyword):
     soup = BeautifulSoup(resp.text, 'html.parser')
     main_titles = soup.find_all('div', 'title')
 
-    for title in main_titles:
+    data = keyword.split(' ')
 
-        if(len(keyword) > 0):
+    if(len(data) >= 1):
+        for title in main_titles:
             if keyword in title.text:
-                inFo += title.text.strip() + "\n"
-                inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
-        else:
+                    inFo += title.text.strip() + "\n"
+                    inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
+    else:
+        for title in main_titles:
             inFo += title.text.strip() + "\n"
             inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
 
