@@ -75,7 +75,7 @@ def handle_message(event):
     elif 'ptt' in msg:
         if(msg in " "):
             keyword = msg.split('')
-            outInfo += ticketInfo(keyword)
+            outInfo += ticketInfo(keyword[1])
         else:
             outInfo += ticketInfo()
 
