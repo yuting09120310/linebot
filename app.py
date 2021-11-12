@@ -76,11 +76,12 @@ def handle_message(event):
         if(msg in " "):
             keyword = msg.split(' ')
             outInfo += ticketInfo(keyword[1])
+            message = TextSendMessage(text=outInfo)
+            line_bot_api.reply_message(event.reply_token,message)
         else:
             outInfo += ticketInfo()
-
-        message = TextSendMessage(text=outInfo)
-        line_bot_api.reply_message(event.reply_token,message)  
+            message = TextSendMessage(text=outInfo)
+            line_bot_api.reply_message(event.reply_token,message)  
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
