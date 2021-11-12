@@ -22,8 +22,13 @@ def ticketInfo(keyword):
     return inFo
     
 # def test():
-#     str = "helloworld"
+#     str = "hello world"
 #     data = str.split(' ')
-#     print(data[0])
+#     if(len(data) > 0):
+#         a = 1
+#     else:
+#         a = 2
+
+#     print(a)
 
 # test()

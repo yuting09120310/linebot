@@ -76,8 +76,10 @@ def handle_message(event):
         keyword = msg.split(' ')
         if(len(keyword) > 1):
             outInfo += ticketInfo(keyword[1])
-            message = TextSendMessage(text=outInfo)
-            line_bot_api.reply_message(event.reply_token,message) 
+        else:
+            outInfo += ticketInfo()
+        message = TextSendMessage(text=outInfo)
+        line_bot_api.reply_message(event.reply_token,message) 
             
     else:
         message = TextSendMessage(text=msg)
