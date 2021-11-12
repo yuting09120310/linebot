@@ -1,7 +1,6 @@
-import requests
-from bs4 import BeautifulSoup
-
 def function_ptt():
+    import requests
+    from bs4 import BeautifulSoup
     res = requests.get("https://www.ptt.cc/bbs/MobileComm/index.html")
     soup = BeautifulSoup(res.text)
     for item in soup.select('.r-ent'):
