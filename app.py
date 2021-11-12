@@ -13,6 +13,7 @@ from linebot.models import *
 from message import *
 from new import *
 from Function import *
+from ptt import *
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -49,8 +50,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    if 'Alex作品集' in msg:
-        message = TextSendMessage(text="https://yuting09120310.github.io/Alex_Blog/") 
+    if '最新合作廠商' in msg:
+        message = imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
     elif '最新活動訊息' in msg:
         message = buttons_message()
@@ -66,6 +67,12 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     elif '功能列表' in msg:
         message = function_list()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif 'Alex作品集' in msg:
+        message = TextSendMessage(text="https://yuting09120310.github.io/Alex_Blog/")
+        line_bot_api.reply_message(event.reply_token, message)
+    elif 'ptt' in msg:
+        message = function_ptt()
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text=msg)
