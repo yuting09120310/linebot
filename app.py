@@ -77,8 +77,8 @@ def handle_message(event):
             keyword = msg.split('')
             outInfo += ticketInfo(keyword)
         else:
-            outInfo += ticketInfo(keyword)
-            
+            outInfo += ticketInfo()
+
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)  
     else:
