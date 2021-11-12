@@ -15,8 +15,9 @@ def ticketInfo(keyword):
 
     for title in main_titles:
 
-        if "{keyword}" in title.text:
+        if keyword in title.text:
             inFo += title.text.strip() + "\n"
             inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
 
     return inFo
+    
