@@ -15,7 +15,7 @@ def ticketInfo(keyword):
 
     data = keyword.split(' ')
 
-    if(len(data) > 0):
+    if(len(data) > 1):
         for title in main_titles:
             if data[1] in title.text:
                 inFo += title.text.strip() + "\n"
@@ -27,9 +27,12 @@ def ticketInfo(keyword):
 
     return inFo
     
-def test():
-    str = "hello word"
-    data = str.split(' ')
-    print(data[0])
+# def test():
+#     str = "ptt 討論"
+#     data = str.split(' ')
+#     if(len(data) > 1):
+#         print(len(data))
+#     else:
+#         print("b")
 
-test()
+# test()
