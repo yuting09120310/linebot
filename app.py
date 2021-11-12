@@ -73,12 +73,8 @@ def handle_message(event):
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
     elif 'ptt' in msg:
-        if(msg in " "):
-            keyword = msg.split('')
-            outInfo += ticketInfo(keyword[1])
-        else:
-            outInfo += ticketInfo()
-
+        keyword = msg.split(' ')
+        outInfo += ticketInfo(keyword[1])
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)  
     else:
