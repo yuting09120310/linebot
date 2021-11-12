@@ -72,7 +72,7 @@ def handle_message(event):
         message = TextSendMessage(text="https://yuting09120310.github.io/Alex_Blog/")
         line_bot_api.reply_message(event.reply_token, message)
     elif 'ptt' in msg:
-        message = 
+        message = function_ptt()
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text=msg)
