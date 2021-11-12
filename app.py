@@ -13,7 +13,6 @@ from linebot.models import *
 from message import *
 from new import *
 from Function import *
-from ptt import *
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -68,12 +67,6 @@ def handle_message(event):
     elif '功能列表' in msg:
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
-    # elif 'Alex作品集' in msg:
-    #     message = TextSendMessage(text="https://yuting09120310.github.io/Alex_Blog/")
-    #     line_bot_api.reply_message(event.reply_token, message)
-    # # elif 'ptt' in msg:
-    #     message = function_ptt()
-    #     line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
