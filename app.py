@@ -67,6 +67,9 @@ def handle_message(event):
     elif '功能列表' in msg:
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
+    elif 'Alex' in msg:
+        message = TextSendMessage(text="https://yuting09120310.github.io/Alex_Blog/")
+        line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
