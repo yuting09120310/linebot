@@ -7,7 +7,7 @@ import random
 import psycopg2
 import json
 
-def ticketInfo():
+def ticketInfo(keyword):
     inFo = ""
     resp = requests.get('https://www.ptt.cc/bbs/MobileComm/index.html')
     soup = BeautifulSoup(resp.text, 'html.parser')
@@ -15,7 +15,7 @@ def ticketInfo():
 
     for title in main_titles:
 
-        if "問題" in title.text:
+        if "{keyword}" in title.text:
             inFo += title.text.strip() + "\n"
             inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
 
