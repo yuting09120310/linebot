@@ -15,20 +15,19 @@ def ticketInfo(keyword):
 
     for title in main_titles:
 
-        if keyword in title.text:
+        if(len(keyword) > 0):
+            if keyword in title.text:
+                inFo += title.text.strip() + "\n"
+                inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
+        else:
             inFo += title.text.strip() + "\n"
             inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
 
     return inFo
     
 # def test():
-#     str = "hello world"
+#     str = ""
 #     data = str.split(' ')
-#     if(len(data) > 0):
-#         a = 1
-#     else:
-#         a = 2
-
-#     print(a)
+#     print(len(str))
 
 # test()
