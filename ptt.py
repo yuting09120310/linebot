@@ -22,8 +22,10 @@ def ticketInfo(keyword):
                 inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
     else:
         for title in main_titles:
+            if "本文已被刪除" in title.text:
+                break
             inFo += title.text.strip() + "\n"
-            # inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
+            inFo += "https://www.ptt.cc" + title.find("a")['href'] + "\n"
 
     print(inFo)
     return inFo
@@ -36,4 +38,4 @@ def ticketInfo(keyword):
 #     else:
 #         print("b")
 
-ticketInfo("ptt 討論")
+ticketInfo("ptt")
