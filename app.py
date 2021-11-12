@@ -50,7 +50,7 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     if 'Alex作品集' in msg:
-        message = "https://yuting09120310.github.io/Alex_Blog/"
+        message = TextSendMessage(text="https://yuting09120310.github.io/Alex_Blog/") 
         line_bot_api.reply_message(event.reply_token, message)
     elif '最新活動訊息' in msg:
         message = buttons_message()
