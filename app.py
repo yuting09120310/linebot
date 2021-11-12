@@ -74,11 +74,11 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     elif 'ptt' in msg:
         keyword = msg.split(' ')
-        if(keyword.length > 1):
+        if(len(keyword) > 1):
             outInfo += ticketInfo(keyword[1])
             message = TextSendMessage(text=outInfo)
-            line_bot_api.reply_message(event.reply_token,message)  
-        
+            line_bot_api.reply_message(event.reply_token,message) 
+            
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)

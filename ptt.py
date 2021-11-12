@@ -21,3 +21,9 @@ def ticketInfo(keyword):
 
     return inFo
     
+# def test():
+#     str = "helloworld"
+#     data = str.split(' ')
+#     print(data[0])
+
+# test()
