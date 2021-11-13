@@ -31,11 +31,8 @@ def ticketInfo(keyword):
     return inFo
     
 # def test():
-#     str = "ptt"
-#     data = str.split(' ')
-#     if(len(data) > 1):
-#         print(len(data))
-#     else:
-#         print("b")
+#     str = "Ptt"
+#     str.lower()
+#     print(str)
 
-ticketInfo("ptt")
+# test()
