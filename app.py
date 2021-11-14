@@ -75,7 +75,7 @@ def handle_message(event):
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)
     elif 'dcard' in user_keyword:
-        outInfo += test()
+        outInfo += dcard()
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)  
     else:
