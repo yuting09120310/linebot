@@ -6,6 +6,7 @@ import requests
 import random
 import psycopg2
 import json
+import re
 
 def ticketInfo(keyword):
     data = keyword.split(' ')
@@ -33,10 +34,27 @@ def ticketInfo(keyword):
     print(inFo)
     return inFo
     
-# def test():
-#     str = "ptt 3c iphone12" 
-#     data = str.split(' ')
-#     print(len(data))
-# test()
+def test():
+    inFo = ""
+    headers = {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36'
+    }
+    resp = requests.get('https://www.dcard.tw/f/pet', headers = headers)
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    main_titles = soup.find_all('a',href=re.compile(r'pet/p/'))
+    # title = main_titles.find_all('span')
+    # print(main_titles)
 
-ticketInfo("ptt")
+    # data = main_titles.split(',')
+    for data in main_titles:
+        inFo += data.text + "\n"
+        url = "https://www.dcard.tw/" + data.get('href')
+        inFo += url + "\n"
+
+    print(inFo)
+    # for tag in main_titles:
+    #     # print(tag.get('a').text)
+    #     print(tag.get('href'))
+    
+test()
+
