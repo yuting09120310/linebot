@@ -34,7 +34,7 @@ def ticketInfo(keyword):
     print(inFo)
     return inFo
     
-def test():
+def dcard():
     inFo = ""
     headers = {
         'user-agent': 'Mozilla/5.0'
