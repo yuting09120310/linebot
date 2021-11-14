@@ -46,8 +46,5 @@ def dcard():
         inFo += data.text + "\n"
         url = "https://www.dcard.tw" + data.get('href')
         inFo += url + "\n"
-    print(inFo) 
+    print(inFo)
     return inFo
-    # for tag in main_titles:
-    #     # print(tag.get('a').text)
-    #     print(tag.get('href'))
