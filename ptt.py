@@ -51,5 +51,3 @@ def dcard():
     # for tag in main_titles:
     #     # print(tag.get('a').text)
     #     print(tag.get('href'))
-
-test()
