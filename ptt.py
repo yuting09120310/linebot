@@ -44,10 +44,12 @@ def test():
     main_titles = soup.find_all('a',href=re.compile(r'pet/p/'))
     for data in main_titles:
         inFo += data.text + "\n"
-        url = "https://www.dcard.tw/" + data.get('href')
+        url = "https://www.dcard.tw" + data.get('href')
         inFo += url + "\n"
     print(inFo) 
     return inFo
     # for tag in main_titles:
     #     # print(tag.get('a').text)
     #     print(tag.get('href'))
+
+test()
