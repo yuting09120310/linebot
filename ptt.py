@@ -47,4 +47,4 @@ def dcard():
         url = "https://www.dcard.tw" + data.get('href')
         inFo += url + "\n"
     print(inFo)
-    return inFo
+    return soup
