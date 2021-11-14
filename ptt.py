@@ -51,10 +51,10 @@ def test():
         url = "https://www.dcard.tw/" + data.get('href')
         inFo += url + "\n"
 
-    print(inFo)
+    return inFo
     # for tag in main_titles:
     #     # print(tag.get('a').text)
     #     print(tag.get('href'))
     
-test()
+# test()
 
