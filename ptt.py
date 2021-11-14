@@ -42,10 +42,6 @@ def test():
     resp = requests.get('https://www.dcard.tw/f/pet', headers = headers)
     soup = BeautifulSoup(resp.text, 'html.parser')
     main_titles = soup.find_all('a',href=re.compile(r'pet/p/'))
-    # title = main_titles.find_all('span')
-    # print(main_titles)
-
-    # data = main_titles.split(',')
     for data in main_titles:
         inFo += data.text + "\n"
         url = "https://www.dcard.tw/" + data.get('href')
