@@ -53,7 +53,24 @@ def stock(keyword):
     return inFo
 
 
-stock("股票 0050")
+def gpu():
+    inFo = ""
+    # data = keyword.split(' ')
+    headers = {
+        'user-agent': 'Mozilla/5.0'
+    }
+    resp = requests.get('https://ecapi.pchome.com.tw/cdn/ecshop/prodapi/v2/store/DRADI7/prod&offset=0&limit=4&fields=Id,Nick,Pic,Price,Discount,isSpec,Name,isCarrier,isSnapUp,isBigCart,OriginPrice,iskdn,isPreOrder24h,PreOrdDate,isWarranty,isFresh,isBidding,isETicket,ShipType,isO2O&_callback=jsonp_prodtop?_callback=jsonp_prodtop', headers = headers)
+    # main_titles = soup.find_all('a',href = re.compile(r'24h.pchome.com'))
+    # data = soup.split('(')
+
+    data = resp.text.split('(',1)
+    data2 = data[1].split(');',1)
+
+    # cmp = json.load(data2[0])
+
+    print(data2[0])
+
+gpu()
 #代理問題
 # def dcard():
 #     inFo = ""
