@@ -54,7 +54,7 @@ def handle_message(event):
     outInfo = ''
 
     if(user_keyword.isdigit()):
-        msg = "股票 " + msg
+        user_keyword = "股票 " + msg
 
     if '最新合作廠商' in user_keyword:
         message = imagemap_message()
