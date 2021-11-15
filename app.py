@@ -82,7 +82,7 @@ def handle_message(event):
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)
     elif '股票' in user_keyword:
-        outInfo += stock(msg)
+        outInfo += stock(user_keyword)
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)
     else:
