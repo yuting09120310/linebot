@@ -13,7 +13,7 @@ from linebot.models import *
 from message import *
 from new import *
 from Function import *
-from ptt import stock, ticketInfo, dcard
+from ptt import stock, ticketInfo
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========

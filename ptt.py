@@ -51,7 +51,9 @@ def stock(keyword):
 
     print(inFo)
     return inFo
-    
+
+
+stock("股票 0050")
 #代理問題
 # def dcard():
 #     inFo = ""
