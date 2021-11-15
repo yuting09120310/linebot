@@ -39,7 +39,10 @@ def dcard():
     headers = {
         'user-agent': 'Mozilla/5.0'
     }
-    resp = requests.get('https://www.dcard.tw/f/pet', headers = headers)
+    proxy = {
+    'HTTPS': '59.124.224.205:3128'
+    }
+    resp = requests.get('https://www.dcard.tw/f/pet', headers = headers , proxies=proxy)
     soup = BeautifulSoup(resp.text, 'html.parser')
     # main_titles = soup.find_all('a',href=re.compile(r'pet/p/'))
     # for data in main_titles:
