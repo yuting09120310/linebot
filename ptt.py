@@ -65,10 +65,16 @@ def gpu():
 
     data = resp.text.split('(',1)
     data2 = data[1].split(');',1)
+    
+    path = 'output.txt'
+    f = open(path,'w',encoding='utf-8')
+    f.write(data2[0])
 
-    # cmp = json.load(data2[0])
+    data3 = json.loads(data2[0])
 
-    print(data2[0])
+    for item in data3:
+        for price in item['Price']:
+            print(item['Id'] + item['Nick'] + price['P'])
 
 gpu()
 #代理問題
