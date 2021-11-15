@@ -52,6 +52,10 @@ def handle_message(event):
     msg = event.message.text
     user_keyword = msg.lower()
     outInfo = ''
+
+    if(user_keyword.isdigit()):
+        msg = "股票 " + msg
+
     if '最新合作廠商' in user_keyword:
         message = imagemap_message()
         line_bot_api.reply_message(event.reply_token, message)
