@@ -13,7 +13,7 @@ from linebot.models import *
 from message import *
 from new import *
 from Function import *
-from ptt import ticketInfo, dcard
+from ptt import stock, ticketInfo, dcard
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
@@ -77,8 +77,8 @@ def handle_message(event):
         outInfo += ticketInfo(msg)
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)
-    elif 'dcard' in user_keyword:
-        outInfo += dcard(msg)
+    elif '股票' in user_keyword:
+        outInfo += stock(msg)
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)
     else:
