@@ -44,10 +44,12 @@ def dcard():
     }
     resp = requests.get('https://www.dcard.tw/f/pet', headers = headers , proxies=proxy)
     soup = BeautifulSoup(resp.text, 'html.parser')
-    # main_titles = soup.find_all('a',href=re.compile(r'pet/p/'))
-    # for data in main_titles:
-    #     inFo += data.text + "\n"
-    #     url = "https://www.dcard.tw" + data.get('href')
-    #     inFo += url + "\n"
-    # print(inFo)
-    return soup
+    main_titles = soup.find_all('a',href=re.compile(r'pet/p/'))
+    for data in main_titles:
+        inFo += data.text + "\n"
+        url = "https://www.dcard.tw" + data.get('href')
+        inFo += url + "\n"
+    print(inFo)
+    return inFo
+
+dcard()
