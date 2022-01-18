@@ -75,8 +75,6 @@ def gpu():
     for item in data3:
         for price in item['Price']:
             print(item['Id'] + item['Nick'] + price['P'])
-
-gpu()
 #代理問題
 # def dcard():
 #     inFo = ""
