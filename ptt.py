@@ -7,6 +7,7 @@ import psycopg2
 import json
 import re
 import urllib.parse
+from urllib import request
 
 def ticketInfo(keyword):
     data = keyword.split(' ')
@@ -104,6 +105,7 @@ def Product(keyword):
 
 # encoding_change()
 
+Product("蝦皮 垃圾袋")
 # def gpu():
 #     inFo = ""
 #     # data = keyword.split(' ')
@@ -119,8 +121,6 @@ def Product(keyword):
 
 #     print(content)
 # gpu()
-
-
 #代理問題
 # def dcard():
 #     inFo = ""
