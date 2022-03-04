@@ -104,7 +104,6 @@ def Product(keyword):
 
 # encoding_change()
 
-Product("蝦皮 垃圾袋")
 # def gpu():
 #     inFo = ""
 #     # data = keyword.split(' ')
