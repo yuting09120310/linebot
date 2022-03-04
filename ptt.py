@@ -90,7 +90,7 @@ def Product(keyword):
         
         inFo += itemName + '\n'
         inFo += str(int(price / 100000)) + '元' + '\n'
-        # inFo += product_url + '\n'
+        inFo += product_url + '\n'
         inFo += '\n'
     
     print(inFo) 
