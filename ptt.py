@@ -7,6 +7,7 @@ import random
 import psycopg2
 import json
 import re
+import urllib
 
 def ticketInfo(keyword):
     data = keyword.split(' ')
@@ -53,8 +54,6 @@ def stock(keyword):
     return inFo
 
 def Product(keyword):
-    import requests
-    import urllib
 
     inFo = ""
     
@@ -91,8 +90,8 @@ def Product(keyword):
         inFo += product_url + '\n'
         inFo += str(int(price / 100000)) + '\n'
     
+    print(inFo) 
     return inFo 
-
 # def gpu():
 #     inFo = ""
 #     # data = keyword.split(' ')

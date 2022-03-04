@@ -76,7 +76,7 @@ def handle_message(event):
     #     line_bot_api.reply_message(event.reply_token, message)
     elif '蝦皮' in user_keyword:
         outInfo += Product(msg)
-        message = function_list()
+        message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token, message)
     elif 'ptt' in user_keyword:
         outInfo += ticketInfo(msg)
