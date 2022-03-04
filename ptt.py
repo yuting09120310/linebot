@@ -91,7 +91,6 @@ def Product(keyword):
         inFo += itemName + '\n'
         inFo += str(int(price / 100000)) + '元' + '\n'
         inFo += product_url + '\n'
-        inFo += '\n'
     
     print(inFo) 
     return inFo 
@@ -106,7 +105,7 @@ def Product(keyword):
 
 # encoding_change()
 
-# Product("蝦皮 火腿")
+Product("蝦皮 樂事")
 
 # def gpu():
 #     inFo = ""
