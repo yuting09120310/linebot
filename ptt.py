@@ -52,29 +52,62 @@ def stock(keyword):
     print(inFo)
     return inFo
 
+def Product(keyword):
+    import requests
+    import urllib
 
-def gpu():
     inFo = ""
-    # data = keyword.split(' ')
-    headers = {
-        'user-agent': 'Mozilla/5.0'
-    }
-    resp = requests.get('https://ecapi.pchome.com.tw/cdn/ecshop/prodapi/v2/store/DRADI7/prod&offset=0&limit=4&fields=Id,Nick,Pic,Price,Discount,isSpec,Name,isCarrier,isSnapUp,isBigCart,OriginPrice,iskdn,isPreOrder24h,PreOrdDate,isWarranty,isFresh,isBidding,isETicket,ShipType,isO2O&_callback=jsonp_prodtop?_callback=jsonp_prodtop', headers = headers)
-    # main_titles = soup.find_all('a',href = re.compile(r'24h.pchome.com'))
-    # data = soup.split('(')
-
-    data = resp.text.split('(',1)
-    data2 = data[1].split(');',1)
     
-    path = 'output.txt'
-    f = open(path,'w',encoding='utf-8')
-    f.write(data2[0])
+    keyword = keyword.split(' ')[1]
 
-    data3 = json.loads(data2[0])
+    headers = {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.68',
+        'x-api-source': 'pc',
+        'referer': f'https://shopee.tw/search?keyword={urllib.parse.quote(keyword)}'
+    }
 
-    for item in data3:
-        for price in item['Price']:
-            print(item['Id'] + item['Nick'] + price['P'])
+    s = requests.Session()
+    url = 'https://shopee.tw/api/v2/search/product_labels'
+    r = s.get(url, headers=headers)
+
+    base_url = 'https://shopee.tw/api/v2/search_items/'
+    query = f"?by=sales&keyword={keyword}&limit=100"
+    url = base_url + '?' + query
+    r = s.get(url, headers=headers)
+    if r.status_code == requests.codes.ok:
+        data = r.json()
+    
+    for i in range(len(data)):
+        itemid = data['items'][i]['itemid']
+        itemName = data['items'][i]['name']
+        shopid = data['items'][i]['shopid']
+        price = data['items'][i]['price']
+
+        if ' ' in itemName:
+            itemName = itemName.replace(' ', '%20')
+
+        product_url = f'https://shopee.tw/{itemName}-i.{shopid}.{itemid}'
+        
+        inFo += product_url + '\n'
+        inFo += int(price / 100000)+ '\n'
+    
+    return inFo
+
+# def gpu():
+#     inFo = ""
+#     # data = keyword.split(' ')
+#     headers = {
+#         'user-agent': 'Mozilla/5.0'
+#     }
+#     resp = requests.get('https://ecapi.pchome.com.tw/cdn/ecshop/prodapi/v2/store/DRADI7/prod&offset=0&limit=4&fields=Id,Nick,Pic,Price,Discount,isSpec,Name,isCarrier,isSnapUp,isBigCart,OriginPrice,iskdn,isPreOrder24h,PreOrdDate,isWarranty,isFresh,isBidding,isETicket,ShipType,isO2O&_callback=jsonp_prodtop?_callback=jsonp_prodtop', headers = headers)
+#     # main_titles = soup.find_all('a',href = re.compile(r'24h.pchome.com'))
+#     # data = soup.split('(')
+#     content = resp.content.decode()
+
+#     content = content.split('(')
+
+#     print(content)
+# gpu()
 #代理問題
 # def dcard():
 #     inFo = ""
