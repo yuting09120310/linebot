@@ -88,7 +88,7 @@ def Product(keyword):
 
         product_url = f'https://shopee.tw/{urlparse.quote(itemName_change)}-i.{shopid}.{itemid}'
         
-        inFo += itemName + '\n'
+        # inFo += itemName + '\n'
         inFo += str(int(price / 100000)) + '元' + '\n'
         inFo += product_url + '\n'
         inFo += '\n'
@@ -106,7 +106,7 @@ def Product(keyword):
 
 # encoding_change()
 
-# Product("蝦皮 樂事")
+Product("蝦皮 火腿")
 
 # def gpu():
 #     inFo = ""
