@@ -58,6 +58,7 @@ def stock(keyword):
 def Product(keyword):
 
     inFo = ""
+    itemName_change = ""
     
     keyword = keyword.split(' ')[1]
 
@@ -107,7 +108,7 @@ def Product(keyword):
 
 # encoding_change()
 
-Product("蝦皮 垃圾袋")
+Product("蝦皮 樂事")
 
 # def gpu():
 #     inFo = ""
