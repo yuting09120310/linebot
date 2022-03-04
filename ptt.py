@@ -82,13 +82,13 @@ def Product(keyword):
         price = data['items'][i]['price']
 
         if ' ' in itemName:
-            itemName = itemName.replace(' ', '%20')
+            itemName_change = itemName.replace(' ', '%20')
 
-        product_url = f'https://shopee.tw/{itemName}-i.{shopid}.{itemid}'
+        product_url = f'https://shopee.tw/{urllib.parse.quote(itemName_change)}-i.{shopid}.{itemid}'
         
         inFo += itemName + '\n'
         inFo += str(int(price / 100000)) + '元' + '\n'
-        inFo += urllib.parse.quote(product_url) + '\n'
+        inFo += product_url + '\n'
         inFo += '\n'
     
     print(inFo) 
