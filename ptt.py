@@ -58,7 +58,6 @@ def stock(keyword):
 def Product(keyword):
 
     inFo = ""
-    itemName_change = ""
     
     keyword = keyword.split(' ')[1]
 
@@ -85,8 +84,7 @@ def Product(keyword):
         shopid = data['items'][i]['shopid']
         price = data['items'][i]['price']
 
-        if ' ' in itemName:
-            itemName_change = itemName.replace(' ', '%20')
+        itemName_change = itemName.replace(' ', '%20')
 
         product_url = f'https://shopee.tw/{urlparse.quote(itemName_change)}-i.{shopid}.{itemid}'
         
