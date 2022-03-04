@@ -2,7 +2,7 @@ import json
 import os
 import random
 import re
-from urllib import parse as urlparse
+from urllib import parse
 
 from urllib import request
 
@@ -64,7 +64,7 @@ def Product(keyword):
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.68',
         'x-api-source': 'pc',
-        'referer': f'https://shopee.tw/search?keyword={urlparse.quote(keyword)}'
+        'referer': f'https://shopee.tw/search?keyword={parse.quote(keyword)}'
     }
 
     s = requests.Session()
@@ -86,11 +86,11 @@ def Product(keyword):
 
         itemName_change = itemName.replace(' ', '%20')
 
-        product_url = f'https://shopee.tw/{urlparse.quote(itemName_change)}-i.{shopid}.{itemid}'
+        product_url = f'https://shopee.tw/{parse.quote(itemName_change)}-i.{shopid}.{itemid}'
         
         # inFo += itemName + '\n'
         inFo += str(int(price / 100000)) + '元' + '\n'
-        inFo += product_url + '\n'
+        # inFo += product_url + '\n'
         inFo += '\n'
     
     print(inFo) 
