@@ -9,4 +9,3 @@ jieba
 wordcloud
 Pillow
 psycopg2
-urllib

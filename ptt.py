@@ -6,6 +6,7 @@ import random
 import psycopg2
 import json
 import re
+import urllib.parse
 
 def ticketInfo(keyword):
     data = keyword.split(' ')
