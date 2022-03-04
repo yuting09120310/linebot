@@ -89,9 +89,9 @@ def Product(keyword):
         product_url = f'https://shopee.tw/{itemName}-i.{shopid}.{itemid}'
         
         inFo += product_url + '\n'
-        inFo += int(price / 100000)+ '\n'
+        inFo += str(int(price / 100000)) + '\n'
     
-    return inFo
+    return inFo 
 
 # def gpu():
 #     inFo = ""
