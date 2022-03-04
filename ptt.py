@@ -1,13 +1,12 @@
 import os
 
 from bs4 import BeautifulSoup
-from urllib import request
 import requests
 import random
 import psycopg2
 import json
 import re
-import urllib
+import urllib.parse
 
 def ticketInfo(keyword):
     data = keyword.split(' ')
@@ -87,11 +86,25 @@ def Product(keyword):
 
         product_url = f'https://shopee.tw/{itemName}-i.{shopid}.{itemid}'
         
-        inFo += product_url + '\n'
-        inFo += str(int(price / 100000)) + '\n'
+        inFo += itemName + '\n'
+        inFo += str(int(price / 100000)) + '元' + '\n'
+        inFo += urllib.parse.quote(product_url) + '\n'
+        inFo += '\n'
     
     print(inFo) 
     return inFo 
+
+
+# def encoding_change():
+#     url = 'https://shopee.tw/天龍八部手卡（超商最多只能22本.超過要點郵寄-i.2252645.1949589756'
+
+#     print(urllib.quote(url)) 
+
+#     # print(url)
+
+# encoding_change()
+
+Product("蝦皮 垃圾袋")
 # def gpu():
 #     inFo = ""
 #     # data = keyword.split(' ')
