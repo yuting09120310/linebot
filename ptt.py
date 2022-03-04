@@ -86,11 +86,12 @@ def Product(keyword):
 
         itemName_change = itemName.replace(' ', '%20')
 
-        product_url = f'https://shopee.tw/{parse.quote(itemName_change)}-i.{shopid}.{itemid}'
+        product_url = f'https://shopee.tw/test-i.{shopid}.{itemid}'
         
         inFo += itemName + '\n'
         inFo += str(int(price / 100000)) + '元' + '\n'
         inFo += product_url + '\n'
+        inFo += '\n'
     
     print(inFo) 
     return inFo 
@@ -99,7 +100,9 @@ def Product(keyword):
 # def encoding_change():
 #     url = 'https://shopee.tw/天龍八部手卡（超商最多只能22本.超過要點郵寄-i.2252645.1949589756'
 
-#     print(urllib.quote(url)) 
+#     print(url.encode('utf8'))
+
+#     parse.quote(url)
 
 #     # print(url)
 
