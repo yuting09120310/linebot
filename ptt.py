@@ -1,13 +1,15 @@
-import os
-
-from bs4 import BeautifulSoup
-import requests
-import random
-import psycopg2
 import json
+import os
+import random
 import re
-import urllib.parse
+from urllib import parse as urlparse
+
 from urllib import request
+
+import psycopg2
+import requests
+from bs4 import BeautifulSoup
+
 
 def ticketInfo(keyword):
     data = keyword.split(' ')
@@ -62,7 +64,7 @@ def Product(keyword):
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.68',
         'x-api-source': 'pc',
-        'referer': f'https://shopee.tw/search?keyword={urllib.parse.quote(keyword)}'
+        'referer': f'https://shopee.tw/search?keyword={urlparse.quote(keyword)}'
     }
 
     s = requests.Session()
@@ -85,7 +87,7 @@ def Product(keyword):
         if ' ' in itemName:
             itemName_change = itemName.replace(' ', '%20')
 
-        product_url = f'https://shopee.tw/{urllib.parse.quote(itemName_change)}-i.{shopid}.{itemid}'
+        product_url = f'https://shopee.tw/{urlparse.quote(itemName_change)}-i.{shopid}.{itemid}'
         
         inFo += itemName + '\n'
         inFo += str(int(price / 100000)) + '元' + '\n'
@@ -105,7 +107,7 @@ def Product(keyword):
 
 # encoding_change()
 
-# Product("蝦皮 垃圾袋")
+Product("蝦皮 垃圾袋")
 
 # def gpu():
 #     inFo = ""
