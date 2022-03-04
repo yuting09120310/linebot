@@ -105,7 +105,7 @@ def Product(keyword):
 
 # encoding_change()
 
-Product("蝦皮 樂事")
+# Product("蝦皮 樂事")
 
 # def gpu():
 #     inFo = ""
