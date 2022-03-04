@@ -88,7 +88,7 @@ def Product(keyword):
 
         product_url = f'https://shopee.tw/{parse.quote(itemName_change)}-i.{shopid}.{itemid}'
         
-        # inFo += itemName + '\n'
+        inFo += itemName + '\n'
         inFo += str(int(price / 100000)) + '元' + '\n'
         # inFo += product_url + '\n'
         inFo += '\n'
