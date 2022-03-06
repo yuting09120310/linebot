@@ -10,3 +10,4 @@ wordcloud
 Pillow
 psycopg2
 sha1
+hmac
