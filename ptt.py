@@ -2,9 +2,7 @@ import json
 import os
 import random
 import re
-from urllib import parse
-
-from urllib import request
+from urllib import parse, request
 
 import psycopg2
 import requests
@@ -91,6 +89,7 @@ def Product(keyword):
         inFo += itemName + '\n'
         inFo += str(int(price / 100000)) + '元' + '\n'
         inFo += product_url + '\n'
+        inFo += str(price) + '\n'
         inFo += '\n'
     
     print(inFo) 
@@ -98,17 +97,11 @@ def Product(keyword):
 
 
 # def encoding_change():
-#     url = 'https://shopee.tw/天龍八部手卡（超商最多只能22本.超過要點郵寄-i.2252645.1949589756'
-
-#     print(url.encode('utf8'))
-
-#     parse.quote(url)
-
-#     # print(url)
+#     x = 25792409/120000
+#     print(round(x))
 
 # encoding_change()
 
-# Product("蝦皮 樂事")
 
 # def gpu():
 #     inFo = ""
@@ -159,6 +152,3 @@ def Product(keyword):
 #     for item in main_titles:
 #         f.write(item.text + '\n')
 #     f.close()
-
-    
-    
