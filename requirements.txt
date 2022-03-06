@@ -10,4 +10,4 @@ wordcloud
 Pillow
 psycopg2
 sha1
-format_date_time
+datetime
