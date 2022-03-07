@@ -55,37 +55,45 @@ def Taipei_MRT(key):
         # print(data)
             
         if(key[1] in data[0]['StationName']['Zh_tw']):
-            print("去程")
-            info = timetable(data[0]['StationName']['Zh_tw'],0)
+            # print("去程")
+            info = '當前為去程 班表如下 \n' + timetable(data[0]['StationName']['Zh_tw'],0)
             return info
         else:
-            print("回程")
-            info = timetable(data[1]['StationName']['Zh_tw'],1)
+            # print("回程")
+            info = '當前為回程 班表如下 \n' + timetable(data[1]['StationName']['Zh_tw'],1)
             return info
     else:
         print('輸入錯誤')
 
 
 def timetable(startStation,Direction):
-    info=""
+    info=[]
+    info2=""
     day = datetime.today().isoweekday()
-    now_H = "09"
-    now_M = "00"
+    now_time = "18:00"
 
     # Direction 營運路線方向描述 : [0:'去程',1:'返程']
     base = "https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/StationTimeTable/TRTC?$filter="
-    url = f"StationName/Zh_tw eq '{startStation}' and Direction eq {Direction} and ServiceDay/ServiceTag eq '平日' &$top=30&$format=JSON"
+    url = f"StationName/Zh_tw eq '{startStation}' and Direction eq '{Direction}' and ServiceDay/ServiceTag eq '平日' &$top=30&$format=JSON"
 
     if(day > 5):
-        url = f"StationName/Zh_tw eq '{startStation}' and Direction eq {Direction} and ServiceDay/ServiceTag eq '假日' &$top=30&$format=JSON"
+        url = f"StationName/Zh_tw eq '{startStation}' and Direction eq '{Direction}' and ServiceDay/ServiceTag eq '假日' &$top=30&$format=JSON"
 
     response = request('get', base+url, headers= a.get_auth_header())
     content = response.content.decode()  #重新編碼 預設空的為utf8
     data = json.loads(content)
 
+    print(base+url)
+
     for i in range(0,len(data)):
-        timetables = list(data[i]['Timetables'])
-        for item in timetables:
-            if((item['ArrivalTime'][0:2] in now_H) & (item['ArrivalTime'][3:6] >= now_M)):
-                info += item['ArrivalTime'] + '\n'
-    return info
+        timetables = data[i]['Timetables']
+        for j in range (0,len(timetables)):
+            if(now_time <= timetables[j]['ArrivalTime']):
+                info.append(timetables[j]['ArrivalTime'])
+
+    info = list(set(info))
+
+    for k in range(0,len(info)):
+        info2 += info[k] + '\n'
+
+    return info2
