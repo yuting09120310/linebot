@@ -69,8 +69,8 @@ def Taipei_MRT(key):
 def timetable(startStation,Direction):
     info=""
     day = datetime.today().isoweekday()
-    now_H = datetime.now().strftime("%H")
-    now_M = datetime.now().strftime("%M")
+    now_H = "09"
+    now_M = "00"
 
     # Direction 營運路線方向描述 : [0:'去程',1:'返程']
     base = "https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/StationTimeTable/TRTC?$filter="
