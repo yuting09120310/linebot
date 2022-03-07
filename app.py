@@ -14,6 +14,7 @@ from message import *
 from new import *
 from Function import *
 from ptt import stock, ticketInfo, Product
+from MRT import Taipei_MRT
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫==========
