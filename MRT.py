@@ -94,5 +94,4 @@
 # Taipei_MRT(key)
 
 def mrt_test(args):
-    h = 10
-    return h
+    return args
