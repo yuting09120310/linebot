@@ -92,8 +92,12 @@ def timetable(startStation,Direction):
                 info.append(timetables[j]['ArrivalTime'])
 
     info = list(set(info))
+    info.sort()
 
     for k in range(0,len(info)):
         info2 += info[k] + '\n'
 
     return info2
+
+
+Taipei_MRT("捷運 板橋 西門")
