@@ -94,7 +94,7 @@ def timetable(startStation,Direction):
     info = list(set(info))
     info.sort()
 
-    for k in range(0,len(info)):
+    for k in range(0,3):
         info2 += info[k] + '\n'
 
     return info2
