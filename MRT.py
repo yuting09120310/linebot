@@ -51,13 +51,11 @@ def Taipei_MRT(key):
         response = request('get', base+url, headers= a.get_auth_header())
         content = response.content.decode()  #重新編碼 預設空的為utf8
         data = json.loads(content)
-
-        # print(data)
             
         if(key[1] in data[0]['StationName']['Zh_tw']):
             # print("去程")
             info = '當前為去程 班表如下 \n' + timetable(data[0]['StationName']['Zh_tw'],0)
-            return info
+            print (info)
         else:
             # print("回程")
             info = '當前為回程 班表如下 \n' + timetable(data[1]['StationName']['Zh_tw'],1)
@@ -70,7 +68,7 @@ def timetable(startStation,Direction):
     info=[]
     info2=""
     day = datetime.today().isoweekday()
-    now_time = "18:00"
+    now_time = datetime.now().strftime('%H:%M')
 
     # Direction 營運路線方向描述 : [0:'去程',1:'返程']
     base = "https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/StationTimeTable/TRTC?$filter="
