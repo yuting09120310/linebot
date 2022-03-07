@@ -55,7 +55,7 @@ def Taipei_MRT(key):
         if(key[1] in data[0]['StationName']['Zh_tw']):
             # print("去程")
             info = '當前為去程 班表如下 \n' + timetable(data[0]['StationName']['Zh_tw'],0)
-            print (info)
+            return info
         else:
             # print("回程")
             info = '當前為回程 班表如下 \n' + timetable(data[1]['StationName']['Zh_tw'],1)
