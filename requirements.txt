@@ -11,4 +11,3 @@ Pillow
 psycopg2
 sha1
 datetime
-json

@@ -6,7 +6,6 @@ from time import mktime
 import base64
 from requests import request
 import json
-from datetime import datetime
 
 app_id = '1a05ff6ce5734d2aacac7e0969a53ade'
 app_key = 'Gpt_U47acZpGT1HAojFgO1q6Hgw'
@@ -37,8 +36,7 @@ class Auth():
 
 a = Auth(app_id, app_key)
 
-def name(key):
-
+def Taipei_MRT(key):
     key = key.split(' ')
 
     if(len(key) == 3):
@@ -58,15 +56,18 @@ def name(key):
             
         if(key[1] in data[0]['StationName']['Zh_tw']):
             print("去程")
-            timetable(data[0]['StationName']['Zh_tw'],0)
+            info = timetable(data[0]['StationName']['Zh_tw'],0)
+            return info
         else:
             print("回程")
-            timetable(data[1]['StationName']['Zh_tw'],1)
+            info = timetable(data[1]['StationName']['Zh_tw'],1)
+            return info
     else:
         print('輸入錯誤')
 
 
 def timetable(startStation,Direction):
+    info=""
     day = datetime.today().isoweekday()
     now_H = datetime.now().strftime("%H")
     now_M = datetime.now().strftime("%M")
@@ -86,7 +87,8 @@ def timetable(startStation,Direction):
         timetables = list(data[i]['Timetables'])
         for item in timetables:
             if((item['ArrivalTime'][0:2] in now_H) & (item['ArrivalTime'][3:6] >= now_M)):
-                print(item['ArrivalTime'])
+                info += item['ArrivalTime'] + '\n'
+    return info
             
 key = input()
-name(key)
+Taipei_MRT(key)
