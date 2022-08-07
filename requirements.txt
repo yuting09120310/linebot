@@ -1,0 +1,13 @@
+line-bot-sdk
+flask
+beautifulsoup4
+selenium
+requests
+html5lib
+matplotlib
+jieba
+wordcloud
+Pillow
+psycopg2
+sha1
+datetime
