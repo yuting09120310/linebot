@@ -13,8 +13,9 @@ from linebot.models import *
 from message import *
 from new import *
 from Function import *
-from ptt import stock, ticketInfo, Product
+from objFun import stock, ticketInfo, Product
 from MRT import Taipei_MRT
+from healthy import
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫===========
@@ -89,6 +90,14 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,message)
     elif '股票' in user_keyword:
         outInfo += stock(user_keyword)
+        message = TextSendMessage(text=outInfo)
+        line_bot_api.reply_message(event.reply_token,message)
+    elif '阿公' in user_keyword:
+        outInfo += record(user_keyword)
+        message = TextSendMessage(text=outInfo)
+        line_bot_api.reply_message(event.reply_token,message)
+    elif '阿嬤' in user_keyword:
+        outInfo += record(user_keyword)
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)
     else:
