@@ -21,7 +21,7 @@ from MRT import Taipei_MRT
 import tempfile, os
 import datetime
 import time
-#======python的函數庫==========
+#======python的函數庫===========
 
 app = Flask(__name__)
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
