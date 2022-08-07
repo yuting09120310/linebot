@@ -15,7 +15,7 @@ from new import *
 from Function import *
 from objFun import stock, ticketInfo, Product
 from MRT import Taipei_MRT
-from healthy import
+from healthy import record
 #======這裡是呼叫的檔案內容=====
 
 #======python的函數庫===========
