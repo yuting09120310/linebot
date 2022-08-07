@@ -37,7 +37,7 @@ def record(keyword):
     
         conn.commit()
             
-        print("紀錄完成")
+        return "紀錄完成囉"
 
     except Exception as ex:
-        print("紀錄失敗")
+        return "紀錄失敗"
