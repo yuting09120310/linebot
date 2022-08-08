@@ -59,10 +59,20 @@ def show(keyword):
         cursor.execute(command)
     
         result = cursor.fetchall()
-            
-        print(result)
+        
+        result = list(result)
+
+        info = ""
+
+        for item in result:
+            print(list(item))
+        
 
         return result
 
     except Exception as ex:
         return "開啟資料庫失敗"
+
+
+data = input()
+show(data)
