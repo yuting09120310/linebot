@@ -53,10 +53,9 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     user_keyword = msg.lower()
-    outInfo = ''
+    str_keyword = user_keyword.split(' ')[0]
 
-    if(user_keyword.isdigit()):
-        user_keyword = "股票 " + user_keyword
+    outInfo = ''
 
     if '最新合作廠商' in user_keyword:
         message = imagemap_message()
@@ -73,34 +72,18 @@ def handle_message(event):
     elif '功能列表' in msg:
         message = function_list()
         line_bot_api.reply_message(event.reply_token, message)
-    elif '捷運' in user_keyword:
-        outInfo += Taipei_MRT(msg)
-        message = TextSendMessage(text=outInfo)
-        line_bot_api.reply_message(event.reply_token, message)
-    elif '蝦皮' in user_keyword:
-        outInfo += Product(msg)
-        message = TextSendMessage(text=outInfo)
-        line_bot_api.reply_message(event.reply_token, message)
-    elif 'ptt' in user_keyword:
-        outInfo += ticketInfo(msg)
-        message = TextSendMessage(text=outInfo)
-        line_bot_api.reply_message(event.reply_token,message)
-    elif '股票' in user_keyword:
-        outInfo += stock(user_keyword)
-        message = TextSendMessage(text=outInfo)
-        line_bot_api.reply_message(event.reply_token,message)
-    elif '阿公' in user_keyword:
+    elif '阿公' in str_keyword:
         outInfo += record(user_keyword)
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)
-    elif '阿嬤' in user_keyword:
+    elif '阿嬤' in str_keyword:
         outInfo += record(user_keyword)
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)
-    elif '查詢' in msg:
+    elif '查詢' in str_keyword:
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
-    elif '查找' in msg:
+    elif '查找' in str_keyword:
         outInfo += show(user_keyword)
         message = TextSendMessage(text=outInfo)
         line_bot_api.reply_message(event.reply_token,message)
