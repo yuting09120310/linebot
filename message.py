@@ -114,8 +114,8 @@ def Carousel_Template():
                     text='欸嘿',
                     actions=[
                         MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是1'
+                            label='點我查詢阿公的紀錄',
+                            text='查找 阿公 紀錄'
                         ),
                         # PostbackTemplateAction(
                         #     label='回傳一個訊息',
@@ -137,8 +137,8 @@ def Carousel_Template():
                     text='我不知道要打甚麼 :(',
                     actions=[
                         MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是2'
+                            label='點我查詢阿嬤的紀錄',
+                            text='查找 阿嬤 紀錄'
                         ),
                         # PostbackTemplateAction(
                         #     label='回傳一個訊息',

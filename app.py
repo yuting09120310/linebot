@@ -100,6 +100,10 @@ def handle_message(event):
     elif '查詢' in msg:
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
+    elif '查找' in msg:
+        outInfo += show(user_keyword)
+        message = TextSendMessage(text=outInfo)
+        line_bot_api.reply_message(event.reply_token,message)
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)

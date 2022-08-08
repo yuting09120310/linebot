@@ -40,4 +40,29 @@ def record(keyword):
         return "紀錄完成囉"
 
     except Exception as ex:
-        return "紀錄失敗"
+        return "紀錄失敗，資料有誤，請重新確認。"
+
+
+def show(keyword):
+    data = keyword.split(' ')
+
+    try:
+        
+        conn = pymysql.connect(**db_settings)
+
+        cursor = conn.cursor()
+
+        command = "SELECT time, high_mmHg, low_mmHg, pulse From record WHERE name = " + "'" + data[1] + "'"
+
+        print(command)
+
+        cursor.execute(command)
+    
+        result = cursor.fetchall()
+            
+        print(result)
+
+        return result
+
+    except Exception as ex:
+        return "開啟資料庫失敗"
