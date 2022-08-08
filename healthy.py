@@ -46,24 +46,17 @@ def record(keyword):
 def show(keyword):
     data = keyword.split(' ')
     inFo = ""
-    try:
-        
-        conn = pymysql.connect(**db_settings)
+    conn = pymysql.connect(**db_settings)
 
-        cursor = conn.cursor()
+    cursor = conn.cursor()
+    command = "SELECT time, high_mmHg, low_mmHg, pulse From record WHERE name = " + "'" + data[1] + "'"
+    cursor.execute(command)
 
-        command = "SELECT time, high_mmHg, low_mmHg, pulse From record WHERE name = " + "'" + data[1] + "'"
-
-        cursor.execute(command)
+    result = cursor.fetchall()
     
-        result = cursor.fetchall()
-        
-        resultt = list(result)
-
-        for item in resultt:
-            inFo += (str(item[0]) + " " + str(item[1]) + " " + str(item[2]) + " " + str(item[3])) + "\n"
-        
-        return inFo
-
-    except Exception as ex:
-        return "開啟資料庫失敗"
+    result = list(result)
+    for item in result:
+        inFo += (str(item[0]) + " " + str(item[1]) + " " + str(item[2]) + " " + str(item[3])) + "\n"
+    
+    print(inFo)
+    return inFo
