@@ -53,7 +53,7 @@ def show(keyword):
     cursor.execute(command)
 
     result = cursor.fetchall()
-    inFo = "        時間     最高    最低   脈搏" + "\n"
+    inFo = "        時間       最高      最低   脈搏" + "\n"
     result = list(result)
     for item in result:
         inFo += ("----------------------------------") + "\n"
