@@ -57,7 +57,7 @@ def show(keyword):
     result = list(result)
     for item in result:
         inFo += ("----------------------------------") + "\n"
-        inFo += ("| " +str(item[0]) + "  |  " + str(item[1]) + "   |    " + str(item[2]) + "  |  " + str(item[3]) + "  |") + "\n"
+        inFo += ("| " +str(item[0]) + "  |  " + str(item[1]) + "   |    " + str(item[2]) + " | " + str(item[3]) + "  |") + "\n"
     
     inFo += ("----------------------------------") + "\n"
     print(inFo)
