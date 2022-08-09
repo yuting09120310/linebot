@@ -56,7 +56,7 @@ def show(keyword):
     inFo = "        時間            最高     最低  脈搏" + "\n"
     result = list(result)
     for item in result:
-        inFo += ("| " +str(item[0]) + "  |  " + str(item[1]) + "   |  " + str(item[2]) + "  |  " + str(item[3]) + "  |") + "\n"
+        inFo += ("| " +str(item[0]) + "     " + str(item[1]) + "      " + str(item[2]) + "     " + str(item[3]) + "  |") + "\n"
     
     print(inFo)
     return inFo
