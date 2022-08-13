@@ -132,7 +132,7 @@ def Carousel_Template():
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuo7n2_HNSFuT3T7Z9PUZmn1SDM6G6-iXfRC3FxdGTj7X1Wr0RzA',
+                    thumbnail_image_url='https://raw.githubusercontent.com/yuting09120310/linebot/master/img/bb.png',
                     title='查詢阿嬤的血壓紀錄',
                     text='我不知道要打甚麼 :(',
                     actions=[
