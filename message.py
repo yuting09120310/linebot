@@ -109,7 +109,7 @@ def Carousel_Template():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='./img/aa.png',
+                    thumbnail_image_url='https://raw.githubusercontent.com/yuting09120310/linebot/master/img/aa.png',
                     title='查詢阿公的血壓紀錄',
                     text='欸嘿',
                     actions=[
