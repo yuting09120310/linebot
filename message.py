@@ -109,7 +109,7 @@ def Carousel_Template():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/200px-Number_1_in_green_rounded_square.svg.png',
+                    thumbnail_image_url='./img/aa.png',
                     title='查詢阿公的血壓紀錄',
                     text='欸嘿',
                     actions=[
