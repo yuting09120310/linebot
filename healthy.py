@@ -12,9 +12,9 @@ import time
 
 db_settings = {
         "host":"us-cdbr-east-06.cleardb.net",
-        "db":"heroku_8760c94dd464d66",
-        "user":"b51153f5c0e98d",
-        "password":"11bb074c",
+        "db":"heroku_8040987c26689a4",
+        "user":"be672f4aebbe9d",
+        "password":"bc8c1db6",
         "port": 3306,
         "charset": "utf8"
     }
